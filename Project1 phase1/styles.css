@@ -1,13 +1,36 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.Offer{
+  background-color:  #eceb98;;
+  display: flex;
+  text-align: center;
+  padding-top: 20px;
+  height: 50px;
+  font-size: 23;
+  font-family: sans-serif;
+}
+.lines{
+  flex-grow: 1;
+}
+.line2{
+  padding-right: 15px;
+  padding-top: 5px;
+}
 /*
 task2
 */
+.Icons2{
+  margin-left: 10px;
+}
 .parent_image{
   position: relative;
   display: flex;
   justify-content: center;
 }
 .image1{
-  width: 360px;
+  width: 455px;
   height: 142px;
   position: absolute;
   background-color: white;
@@ -17,15 +40,11 @@ task2
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%) ;  
   
 }
-.imgh1{
-  margin: 6px;
-}
+
 a:hover{
   color: darkblue;
 }
-/*
-task 1
-*/
+
 .btn{
   background-color: white;
   width: 80px;
@@ -36,7 +55,6 @@ task 1
 .nav-par{
   display: flex;
   width: 100%;
-  padding: 14px;
   height: 75px;
   box-sizing: border-box;
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%);  
@@ -115,6 +133,10 @@ display: none;
 
 @media only screen and (max-width: 700px) {
  
+  body{
+    margin: 0px;
+    padding: 0px;
+  }
   #comp{
     display: none;
   }
@@ -126,9 +148,15 @@ display: none;
     align-items: flex-end;
     flex-direction: column-reverse;
   }
+  .Icons1,.Icons4{
+    padding-top: 20px;
+  }
+  .Offer{
+    height: 60px;
+  }
   .image1{
     top:400px;
-    left: -10px;
+    left: 0px;
     width: 100%;
   }
   .Icons4{
