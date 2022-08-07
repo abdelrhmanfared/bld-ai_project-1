@@ -1,0 +1,138 @@
+/*
+task2
+*/
+.parent_image{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.image1{
+  width: 360px;
+  height: 142px;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  top: 64px;
+  left: 15%;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%) ;  
+  
+}
+.imgh1{
+  margin: 6px;
+}
+a:hover{
+  color: darkblue;
+}
+/*
+task 1
+*/
+.btn{
+  background-color: white;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+.nav-par{
+  display: flex;
+  width: 100%;
+  padding: 14px;
+  height: 75px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%);  
+
+}
+.Icons2,.Icons3,.linksG,.buttons{
+  margin-right: 10px;
+}
+.Search_bar{
+  margin-right: 35px;
+}
+
+.submit{
+  margin-top: 10px;
+  margin-left: 10px;
+
+  position: absolute;
+}
+
+#comp,#Mob{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.links{
+  text-decoration:none;
+  color: black;
+}
+.linksG{
+  font-size: large;
+}
+
+.Search_bar{
+  flex-grow: 1;
+}
+.Search_form{
+  width: 100%;
+}
+.Search{
+  border-radius: 20px;
+  padding-left: 50px;
+  width:95%;
+  height: 40px;
+  border: 2px solid black;
+}
+.signup{
+  background-color: black;
+  color: white;
+}
+.imgbtn{
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+  width: 40px;
+}
+#Mob{
+display: none;
+}
+.submit{
+  background-color: white;
+  border: none;
+  padding-top: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .link2{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .link3{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+ 
+  #comp{
+    display: none;
+  }
+  #Mob{
+    display: block;
+  }
+  .parent_image{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+  }
+  .image1{
+    top:400px;
+    left: -10px;
+    width: 100%;
+  }
+  .Icons4{
+    position: absolute;
+    left: 75%;
+  }
+}
