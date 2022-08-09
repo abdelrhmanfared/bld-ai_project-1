@@ -29,6 +29,9 @@ body {
   display: flex;
   justify-content: center;
 }
+.text_inimage{
+  padding-left: 5px;
+}
 .image1{
 
   width: 455px;
@@ -44,7 +47,9 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-
+.cour{
+  padding-left: 10px;
+}
 .course_pre{
   padding: 10px 30px;  
   display: flex;
@@ -119,6 +124,12 @@ a:hover{
   background-color: white;
   border: 1px solid black;
   width: 40px;
+}
+.text_about_course1,.text_about_course2{
+  padding-left: 20px;
+}
+.text_about_course1{
+  padding-top: 10px;
 }
 #Mob{
 display: none;
@@ -216,20 +227,16 @@ display: none;
   .cour1{
     width: 46%;
   }
-  body{
-    margin: 0px;
-    padding: 0px;
-  }
+ 
   #comp{
     display: none;
   }
   #Mob{
     display: block;
   }
-  .parent_image{
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column-reverse;
+  
+  .text_inimage{
+    padding-left: 15px;
   }
   .Icons1,.Icons4{
     padding-top: 20px;
@@ -245,9 +252,7 @@ display: none;
     width: 100%;
     box-shadow: 0px 0px;
   }
-  .imgh1,.imgp,.ty{
-    padding-left: 20px;
-  }
+  
 
   .Icons4{
     position: absolute;
@@ -262,22 +267,17 @@ display: none;
     margin-left: 30px;
     border: 1px solid rebeccapurple;
   }
-  #comp{
-    display: none;
-  }
-  .Courses_intro{
-    margin-top: 180px;
-  }
+
  
-  #Mob{
-    display: block;
-  }
-  .parent_image{
-    display: flex;
-    flex-direction: column-reverse;
-  }
+ 
   .Icons1,.Icons4{
     padding-top: 20px;
+  }
+  .conatiner{
+    margin-left: 10px;
+  }
+  .conatiner{
+    margin-top: 34px;
   }
   .Offer{
     height: 60px;
@@ -288,10 +288,6 @@ display: none;
     width: 100%;
     box-shadow: 0px 0px;
   }
-  .imgh1,.imgp,.ty{
-    padding-left: 20px;
-  }
-
   .Icons4{
     position: absolute;
     left: 75%;
