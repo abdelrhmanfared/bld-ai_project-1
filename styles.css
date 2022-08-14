@@ -4,7 +4,8 @@ body {
   margin: 0;
   height: 1500px;
 }
-.Offer{
+
+.offers{
   background-color:  #eceb98;;
   display: flex;
   flex-grow: 1;
@@ -14,7 +15,7 @@ body {
   font-size: 23;
   font-family: sans-serif;
 }
-.lines{
+.offer-courses{
   flex-grow: 1;
 }
 .line2{
@@ -142,6 +143,29 @@ display: none;
 .checked {
   color: orange;
 }
+.explore-course{
+  background-color: white;
+  height: 40px;
+  font-weight: bold;
+  margin: 10px 20px;
+}
+.courses_list{
+  list-style: none;
+  width: 1400px;
+}
+.cont{
+  height: 40px;
+  justify-content: center;
+  display: flex;
+}
+li {
+  float: left;
+  margin: 0px 5px;
+  color: gray;
+}
+.clicked{
+  color: black;
+}
 .g{
   color: gray;
   margin: 3px;
@@ -151,8 +175,13 @@ display: none;
   justify-content: center;
   align-items: center ;
 }
+.h1-intro{
+  font-weight: bold;
+  font-size: x-large;
+}
 .conatiner{
   width: 1340px;
+  margin: 0px 35px;
 }
 .fl{
   width: 100%;
@@ -241,16 +270,16 @@ display: none;
   .Icons1,.Icons4{
     padding-top: 20px;
   }
-  .Offer{
+  .offers{
     height: 60px;
   }
   .Courses_intro{
-    margin-top: 140px;
+    margin-top: 150px;
   }
   .image1{
-    transform: translate(+00%, +170%);
-    width: 100%;
-    box-shadow: 0px 0px;
+    transform: translate(-7%, +180%);
+    width: 90%;
+    box-shadow: none;
   }
   
 
@@ -273,20 +302,17 @@ display: none;
   .Icons1,.Icons4{
     padding-top: 20px;
   }
-  .conatiner{
-    margin-left: 10px;
-  }
+
   .conatiner{
     margin-top: 34px;
   }
-  .Offer{
+  .offers{
     height: 60px;
   }
-  
   .image1{
-    transform: translate(+00%, +170%);
-    width: 100%;
-    box-shadow: 0px 0px;
+    transform: translate(-2%, +180%);
+    width: 90%;
+    box-shadow: none;
   }
   .Icons4{
     position: absolute;
