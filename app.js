@@ -1,9 +1,11 @@
-let Course;
+let tag;
+let cnt = 0;
 function Instructor_names(tags) {
   let str = "";
   for (let i = 0; i < tags.instructors.length; i++) {
     str += `<h4 class="g">${tags.instructors[i].name}</h4>`;
   }
+
   return str;
 }
 function CountStars(tag) {
@@ -19,38 +21,72 @@ function CountStars(tag) {
   return s;
 }
 function Create_Course(tags) {
-  let str =
-    `<div class = "cour1"> <img class="fl"src="${tags.image}"alt="pyhon"/><div class = "Head_courses"><h3 class ="b">${tags.title}</h3>` +
-    Instructor_names(tags) +
-    CountStars(tags) +
-    `</div><h5 class ="b">${tags.price} $</h5></div></div>`;
+  let str = "";
+  for (let i = 0; i < tags.courses.length; i++) {
+    str +=
+      `
+      <div class = "cour1"> 
+      <img class="fl"src="${tags.courses[i].image}"alt="pyhon"/>
+      <div class = "Head_courses"><h3 class ="b">${tags.courses[i].title}</h3>` +
+      Instructor_names(tags.courses[i]) +
+      CountStars(tags.courses[i]) +
+      `</div>
+      <h5 class ="b">${tags.courses[i].price} $</h5>
+      </div>`;
+  }
+
   return str;
 }
 const filterCourses = async (e) => {
   e.preventDefault();
+
   let text = document.querySelector(".Search").value.toLowerCase();
   let x = document.querySelector(".cour");
   let str = "";
-  for (c of Course) {
-    if (c.title.toLowerCase().includes(text)) str += Create_Course(c);
+  console.log(tag.courses.length);
+  for (let i = 0; i < tag.courses.length; i++) {
+    if (tag.courses[i].title.toLowerCase().includes(text)) {
+      str +=
+        `
+        <div class = "cour1"> 
+        <img class="fl"src="${tag.courses[i].image}"alt="pyhon"/>
+        <div class = "Head_courses"><h3 class ="b">${tag.courses[i].title}</h3>` +
+        Instructor_names(tag.courses[i]) +
+        CountStars(tag.courses[i]) +
+        `</div>
+        <h5 class ="b">${tag.courses[i].price} $</h5>
+        </div>`;
+      console.log(str);
+    }
   }
   x.innerHTML = str;
 };
-const LoadCourses = async () => {
-  let url = "http://localhost:3000/courses";
+const LoadCourses = async (p) => {
+  let url = "http://localhost:3000/data";
   let fet = await fetch(url);
   let data = await fet.json();
-  Course = data;
-  let x = document.querySelector(".cour");
-  for (tags of data) {
-    x.innerHTML += Create_Course(tags);
-  }
+  const Res = data[p][0];
+  tag = data[p][0];
+  let x = document.querySelector(".course_pre");
+  let str = `
+  <div class ="ctr">
+  <h2 class="text_about_course1" >${Res.header}</h2>
+  <p class="text_about_course2">${Res.description}</p>    
+  <button class = "explore-course">Explore ${p}</button>
+  <div class="cour">`;
+  str += Create_Course(Res);
+  str += `</div></div>`;
+  x.innerHTML = str;
 };
+let last = -1;
 function reload_Courses(e) {
   let x = e.target.innerHTML;
-  console.log(x);
+  if (last != -1) last.target.style.color = "gray";
+  e.target.style.color = "black";
+  last = e;
+  LoadCourses(x);
 }
-LoadCourses();
+LoadCourses("Python");
 document
   .querySelector(".Search_form")
   .addEventListener("submit", filterCourses);

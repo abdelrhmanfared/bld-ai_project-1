@@ -161,6 +161,8 @@ display: none;
 li {
   float: left;
   margin: 0px 5px;
+  font-weight: bold;
+  font-size: large;
   color: gray;
 }
 .clicked{
@@ -305,6 +307,9 @@ li {
 
   .conatiner{
     margin-top: 34px;
+  }
+  .cont{
+    margin-bottom: 35px;
   }
   .offers{
     height: 60px;
