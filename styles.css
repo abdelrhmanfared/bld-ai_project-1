@@ -65,7 +65,9 @@ a:hover{
   box-sizing: border-box;
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%);  
 }
-
+.udemy-Category{
+  margin-left: 16px;
+}
 .udemy-image,
 .cart-image,
 .links,
@@ -182,7 +184,7 @@ li {
 
 .course-content{
   width: 1350px;
-
+  padding: 0 5 8px;
   border: 3px solid black;
 }
 
@@ -251,7 +253,9 @@ figure img:hover {
   transform: scale(1.11);
 }
 
-
+#carouselExampleControls{
+  width: 100%;
+}
 @media only screen and (max-width: 1400px) {
 
   .udemy-info{  
