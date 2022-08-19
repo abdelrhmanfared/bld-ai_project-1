@@ -2,9 +2,9 @@ let tag;
 let cnt = 0;
 function Instructor_names(tags) {
   let str = "";
-  for (let i = 0; i < tags.instructors.length; i++) {
-    str += `<h4 class="instructor-name">${tags.instructors[i].name}</h4>`;
-  }
+  tags.instructors.forEach((element) => {
+    str += `<h4 class="instructor-name">${element.name}</h4>`;
+  });
 
   return str;
 }
@@ -36,10 +36,9 @@ function Course_data(tags) {
 }
 function Create_Course(tags) {
   let str = "";
-  for (let i = 0; i < tags.courses.length; i++) {
-    str += Course_data(tags.courses[i]);
-  }
-
+  tags.courses.forEach((element) => {
+    str += Course_data(element);
+  });
   return str;
 }
 const filterCourses = async (e) => {
@@ -48,11 +47,11 @@ const filterCourses = async (e) => {
   let text = document.querySelector(".Search").value.toLowerCase();
   let x = document.querySelector(".course-info");
   let str = "";
-  for (let i = 0; i < tag.courses.length; i++) {
-    if (tag.courses[i].title.toLowerCase().includes(text)) {
-      str += Course_data(tag.courses[i]);
+  tag.courses.forEach((element) => {
+    if (element.title.toLowerCase().includes(text)) {
+      str += Course_data(element);
     }
-  }
+  });
   x.innerHTML = str;
 };
 const LoadCourses = async (p) => {
