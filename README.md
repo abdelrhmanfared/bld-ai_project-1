@@ -12,7 +12,7 @@ npm install
 To run the json-server run the command:
 
 ```
-json-server --watch data.json --port 
+json-server --w data.json   
 ```
 
 Then run the index.html file.
