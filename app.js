@@ -2,9 +2,10 @@ let tag;
 let currentIndex = 0;
 let pages = 5;
 let lst = -1;
-let last = document.getElementById("c_python");
-document.getElementById("c_python").style.color = "black";
 let def = "Python";
+let selected_category = "black";
+let prev = document.getElementById("c_python");
+document.getElementById("c_python").style.color = selected_category;
 /**
  * @description Get name of instructions
  * @param {object} instructors - Data about instructors
@@ -54,7 +55,9 @@ function Course_data(Course) {
   return str;
 }
 /**
- * @description Make Carousel depend on page
+ * @description Make Carousel depend on page size and save the active item in varible currentIndex
+ *  because responsive carousel depend on WindowScreen(Bom) Make Me reload data from scratch
+ *  that make me use currentIndex to save the Carousel index while the screen change
  * @param {object} Courses -Contain all data about courses
  * @returns {string} Carousel contain Data about courses
  */
@@ -107,15 +110,13 @@ const filterCourses = async (e) => {
   e.preventDefault();
   let text = document.querySelector(".Search").value.toLowerCase();
   let x = document.querySelector(".course-info");
-  let C = [],
-    t = [];
-  tag.courses.forEach((element) => {
-    if (element.title.toLowerCase().includes(text)) {
-      C.push(Course_data(element));
-    }
-    t.push(Course_data(element));
-  });
-  x.innerHTML = C.length == 0 ? Carousel_Courses(t) : Carousel_Courses(C);
+  const filteredCourses = tag.courses.filter((word) =>
+    word.title.toLowerCase().includes(text)
+  );
+  x.innerHTML =
+    filteredCourses.length == 0
+      ? Create_Course(tag.courses)
+      : Create_Course(filteredCourses);
 };
 /**
  * @description Fetch api and retrive courses
@@ -147,9 +148,9 @@ function reload_Courses(e) {
   document.querySelector(".Search").value = "";
   let Coursetype = e.target.innerHTML;
   def = Coursetype;
-  if (last != -1) last.style.color = "gray";
+  if (prev != -1) prev.style.color = "gray";
   e.target.style.color = "black";
-  last = e.target;
+  prev = e.target;
   LoadCourses(Coursetype);
 }
 /**

@@ -10,9 +10,12 @@ body {
   z-index: 2;
   width: 100%;
 }
-.udemy-header,.udemy-description{
-  margin-left: 20px;
-  margin-top: 15px;
+.udemy-header{
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.udemy-description{
+  margin-left: 25px;
 }
 .offers{
   background-color:  #eceb98;;
@@ -129,7 +132,7 @@ a:hover{
   background-color: white;
   height: 40px;
   font-weight: bold;
-  margin: 10px 20px;
+  margin: 10px 30px;
 }
 .stars{
   color: #e59819;
@@ -184,7 +187,7 @@ li {
 
 .course-content{
   width: 1350px;
-  padding: 0 5 8px;
+  padding: 0;
   border: 3px solid black;
 }
 
@@ -204,7 +207,6 @@ li {
 .course-info{
   display: flex;
   flex-wrap: wrap;
-  padding-left: 10px;
 }
 /*background*/
 
@@ -246,15 +248,22 @@ li {
   width: 50px;
   height: 50px;
   border-radius: 30px;
-  margin-top: 80px;
+  margin-top: 65px;
   background-color: black;
+}
+.carousel-control-prev{
+  margin-right: 90px;
 }
 figure img:hover {
   transform: scale(1.11);
 }
+.course-info{
+  margin: 0px 10px;
+}
 
 #carouselExampleControls{
   width: 100%;
+  padding: 0 10px;
 }
 @media only screen and (max-width: 1400px) {
 
